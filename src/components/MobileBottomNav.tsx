@@ -5,58 +5,11 @@
 import React from 'react';
 import { Box, Flex, Text, Icon } from '@chakra-ui/react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FiHome, FiTrendingUp, FiUsers, FiUser } from 'react-icons/fi';
+import { navItems, NavItem, hiddenOnPages } from '../config/navigation';
 
-interface NavItem {
-  id: string;
-  label: string;
-  icon: React.ElementType;
-  path: string;
-  matchPaths?: string[]; // Additional paths that should highlight this tab
-}
 
-const navItems: NavItem[] = [
-  {
-    id: 'home',
-    label: 'Home',
-    icon: FiHome,
-    path: '/',
-    matchPaths: ['/our-philosophy'],
-  },
-  {
-    id: 'fund',
-    label: 'Fund A',
-    icon: FiTrendingUp,
-    path: '/discover-fund-a',
-    matchPaths: ['/sell-the-wall', '/ai-powered-berkshire'],
-  },
-  {
-    id: 'community',
-    label: 'Community',
-    icon: FiUsers,
-    path: '/community',
-    matchPaths: [],
-  },
-  {
-    id: 'profile',
-    label: 'Profile',
-    icon: FiUser,
-    path: '/hushh-user-profile',
-    matchPaths: ['/contact', '/faq'],
-  },
-];
 
-// Pages where bottom nav should be hidden
-const hiddenOnPages = [
-  '/onboarding',
-  '/login',
-  '/signup',
-  '/auth',
-  '/kyc-flow',
-  '/kyc-demo',
-  '/a2a-playground',
-  '/hushh-user-profile', // Hide nav on profile page for better UX (like onboarding)
-];
+
 
 const MobileBottomNav: React.FC = () => {
   const navigate = useNavigate();
