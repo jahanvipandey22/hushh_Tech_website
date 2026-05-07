@@ -9,6 +9,9 @@ export const hiddenOnPages = [
   '/kyc-flow',
   '/kyc-demo',
   '/a2a-playground',
+
+  // Intentionally hide bottom navigation on profile page
+  // to provide a focused profile experience
   '/hushh-user-profile',
 ];
 
